@@ -1,11 +1,10 @@
 <div class="container mt-5">
     <h2 class="text-success">Liste des tâches</h2>
-    <ol class="mt-3" *ngFor="let task of [1, 2, 3, 4 ,5]; let i = index">
+    <ol class="mt-3" *ngFor="let todo of todos">
         <li>
-            <h3 class="text-warning">Tâche {{ i+1 }}</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis, laboriosam dolore. Repellendus
-                optio voluptas eius beatae, quis, distinctio saepe cumque consectetur sit possimus laudantium. Cum
-                nesciunt suscipit quo nisi praesentium!</p>
+            <h3 class="text-warning">{{ todo.txt}}</h3>
+            <p *ngIf = "todo.completed">Faite</p>
+            <p *ngIf = "!todo.completed">pas faite</p>
         </li>  
     </ol>
 </div>
